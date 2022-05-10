@@ -2,11 +2,11 @@ from dataclasses import dataclass
 from enum import Enum
 from typing import Any, List, Optional, Union
 
-from deciphon_api.sched.cffi import ffi, lib
-from deciphon_api.sched.error import SchedError
-from deciphon_api.sched.hmm import sched_hmm
-from deciphon_api.sched.rc import RC
-from deciphon_api.sched.scan import sched_scan
+from deciphon_sched.cffi import ffi, lib
+from deciphon_sched.error import SchedError
+from deciphon_sched.hmm import sched_hmm
+from deciphon_sched.rc import RC
+from deciphon_sched.scan import sched_scan
 
 __all__ = [
     "sched_job",

@@ -1,9 +1,9 @@
 from dataclasses import dataclass
 from typing import Any, List
 
-from deciphon_api.sched.cffi import ffi, lib
-from deciphon_api.sched.error import SchedError
-from deciphon_api.sched.rc import RC
+from deciphon_sched.cffi import ffi, lib
+from deciphon_sched.error import SchedError
+from deciphon_sched.rc import RC
 
 __all__ = [
     "sched_hmm",

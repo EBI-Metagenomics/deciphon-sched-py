@@ -46,7 +46,7 @@ class RC(int, Enum):
     SCHED_FAIL_ROLLBACK_TRANSACTION = 37
 
     def raise_for_status(self):
-        from deciphon_api.sched.error import SchedError
+        from deciphon_sched.error import SchedError
 
         if self.value != RC.SCHED_OK and self.value != RC.SCHED_END:
             raise SchedError(self)

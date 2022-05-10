@@ -1,11 +1,11 @@
 from dataclasses import dataclass
 from typing import Any, List
 
-from deciphon_api.sched.cffi import ffi, lib
-from deciphon_api.sched.error import SchedError
-from deciphon_api.sched.prod import sched_prod, sched_prod_new
-from deciphon_api.sched.rc import RC
-from deciphon_api.sched.seq import sched_seq, sched_seq_new
+from deciphon_sched.cffi import ffi, lib
+from deciphon_sched.error import SchedError
+from deciphon_sched.prod import sched_prod, sched_prod_new
+from deciphon_sched.rc import RC
+from deciphon_sched.seq import sched_seq, sched_seq_new
 
 __all__ = [
     "sched_scan",

@@ -1,9 +1,9 @@
 import os
 from typing import List
 
-from deciphon_api.sched.cffi import ffi, lib
-from deciphon_api.sched.error import SchedError, SchedWrapperError
-from deciphon_api.sched.rc import RC
+from deciphon_sched.cffi import ffi, lib
+from deciphon_sched.error import SchedError, SchedWrapperError
+from deciphon_sched.rc import RC
 
 __all__ = ["sched_init", "sched_cleanup", "sched_wipe", "sched_health_check"]
 
