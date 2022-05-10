@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "deciphon-sched"
-version = "0.1.0"
+version = "0.0.1"
 description = "Deciphon scheduler wrapper"
 
 license = "MIT"
