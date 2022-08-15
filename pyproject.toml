@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "deciphon-sched"
-version = "0.0.1"
+version = "0.0.2"
 description = "Deciphon scheduler wrapper"
 
 license = "MIT"
@@ -28,7 +28,6 @@ include = [
 build = "*"
 cffi = "*"
 python = "^3.8"
-toml = "^0.9"
 
 [tool.poetry.dev-dependencies]
 black = "*"

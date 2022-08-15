@@ -5,6 +5,7 @@ poetry.lock
 __pycache__/
 *.py[cod]
 *$py.class
+*.o
 
 # C extensions
 *.so
