@@ -1,19 +1,13 @@
 [tool.poetry]
 name = "deciphon-sched"
-version = "0.0.2"
+version = "0.0.3"
 description = "Deciphon scheduler wrapper"
-
 license = "MIT"
-
 authors = ["Danilo Horta <danilo.horta@pm.me>"]
-
 readme = "README.md"
-
 repository = "https://github.com/EBI-Metagenomics/deciphon-sched-py"
 homepage = "https://github.com/EBI-Metagenomics/deciphon-sched-py"
-
 keywords = ["deciphon", "sched", "scheduler"]
-
 classifiers = ["License :: OSI Approved :: MIT License"]
 
 include = [
@@ -25,7 +19,6 @@ include = [
 ]
 
 [tool.poetry.dependencies]
-build = "*"
 cffi = "*"
 python = "^3.8"
 
@@ -39,7 +32,7 @@ script = "build_ext.py"
 generate-setup-file = false
 
 [build-system]
-requires = ["poetry_core>=1.0.0", "cffi"]
+requires = ["poetry_core>=1.0.8", "cffi"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.cibuildwheel]
