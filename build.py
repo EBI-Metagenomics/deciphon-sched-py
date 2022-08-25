@@ -12,6 +12,12 @@ PWD = Path(os.path.dirname(os.path.abspath(__file__)))
 USER = "EBI-Metagenomics"
 PROJECT = "deciphon-sched"
 VERSION = "0.4.7"
+CMAKE_OPTS = [
+    "-DCMAKE_BUILD_TYPE=Release",
+    "-DENABLE_ALL_WARNINGS=ON",
+    "-DCMAKE_POSITION_INDEPENDENT_CODE=ON",
+    "-DSCHED_BUILD_TESTS=OFF",
+]
 
 
 def rm(folder: Path, pattern: str):
@@ -47,16 +53,7 @@ def build_deps():
 
     cmake_bin = get_cmake_bin()
     subprocess.check_call(
-        [
-            cmake_bin,
-            "-S",
-            str(prj_dir),
-            "-B",
-            str(build_dir),
-            "-DCMAKE_BUILD_TYPE=Release",
-            "-DENABLE_ALL_WARNINGS=ON",
-            "-DCMAKE_POSITION_INDEPENDENT_CODE=ON",
-        ],
+        [cmake_bin, "-S", str(prj_dir), "-B", str(build_dir)] + CMAKE_OPTS
     )
     subprocess.check_call([cmake_bin, "--build", str(build_dir), "--config", "Release"])
     subprocess.check_call(
