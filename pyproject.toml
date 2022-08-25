@@ -13,7 +13,7 @@ classifiers = ["License :: OSI Approved :: MIT License"]
 include = [
   { path = "deciphon_sched/*.so", format = "wheel" },
   { path = "deciphon_sched/*.pyd", format = "wheel" },
-  { path = "build.py", format = "sdist" },
+  { path = "build_ext.py", format = "sdist" },
 ]
 
 [tool.poetry.dependencies]
@@ -26,7 +26,7 @@ isort = "*"
 pyright = "*"
 
 [tool.poetry.build]
-script = "build.py"
+script = "build_ext.py"
 generate-setup-file = false
 
 [build-system]
