@@ -9,7 +9,6 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-22.04, macos-11]
-        cibw_arch: [auto, aarch64]
 
     steps:
       - uses: actions/checkout@v2
@@ -23,7 +22,7 @@ jobs:
       - name: Build wheels
         uses: pypa/cibuildwheel@v2.9.0
         env:
-          CIBW_ARCHS_LINUX: ${{ matrix.cibw_arch }}
+          CIBW_ARCHS_LINUX: "auto, aarch64"
 
       - uses: actions/upload-artifact@v2
         with:
