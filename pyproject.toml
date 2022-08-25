@@ -13,9 +13,6 @@ classifiers = ["License :: OSI Approved :: MIT License"]
 include = [
   { path = "deciphon_sched/*.so", format = "wheel" },
   { path = "deciphon_sched/*.pyd", format = "wheel" },
-  { path = "tools/build_ext_deps", format = "sdist" },
-  { path = "tools/merge_headers", format = "sdist" },
-  { path = "tools/update_sched_interface", format = "sdist" },
 ]
 
 [tool.poetry.dependencies]
@@ -28,11 +25,11 @@ isort = "*"
 pyright = "*"
 
 [tool.poetry.build]
-script = "build_ext.py"
+script = "build.py"
 generate-setup-file = false
 
 [build-system]
-requires = ["poetry_core>=1.0.8", "cffi"]
+requires = ["poetry_core>=1.0.8", "cffi", "cmake"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.cibuildwheel]
