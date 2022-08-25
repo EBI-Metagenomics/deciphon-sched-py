@@ -29,6 +29,13 @@ def get_cmake_bin():
     return str(sorted(bins, key=lambda v: len(v))[0])
 
 
+def cleanup_intree_artifacts():
+    rm(PWD / "deciphon_sched", "cffi.c")
+    rm(PWD / "deciphon_sched", "*.o")
+    rm(PWD / "deciphon_sched", "*.so")
+    rm(PWD / "deciphon_sched", "*.dylib")
+
+
 def build_deps():
     ext_dir = PWD / ".ext_deps"
     shutil.rmtree(ext_dir, ignore_errors=True)
@@ -69,6 +76,7 @@ if __name__ == "__main__":
 
     ffibuilder = FFI()
 
+    cleanup_intree_artifacts()
     build_deps()
     library_dirs = [PWD / ".ext_deps" / "lib", PWD / ".ext_deps" / "lib64"]
     include_dirs = [PWD / ".ext_deps" / "include"]
