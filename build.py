@@ -5,9 +5,6 @@ import tarfile
 import urllib.request
 from pathlib import Path
 
-from cffi import FFI
-from cmake import CMAKE_BIN_DIR
-
 PWD = Path(os.path.dirname(os.path.abspath(__file__)))
 USER = "EBI-Metagenomics"
 PROJECT = "deciphon-sched"
@@ -26,6 +23,8 @@ def rm(folder: Path, pattern: str):
 
 
 def get_cmake_bin():
+    from cmake import CMAKE_BIN_DIR
+
     bins = [str(v) for v in Path(CMAKE_BIN_DIR).glob("cmake*")]
     return str(sorted(bins, key=lambda v: len(v))[0])
 
@@ -66,6 +65,8 @@ def build_deps():
 
 
 if __name__ == "__main__":
+    from cffi import FFI
+
     ffibuilder = FFI()
 
     build_deps()

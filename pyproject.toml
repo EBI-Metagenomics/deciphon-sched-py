@@ -13,6 +13,7 @@ classifiers = ["License :: OSI Approved :: MIT License"]
 include = [
   { path = "deciphon_sched/*.so", format = "wheel" },
   { path = "deciphon_sched/*.pyd", format = "wheel" },
+  { path = "build.py", format = "sdist" },
 ]
 
 [tool.poetry.dependencies]
