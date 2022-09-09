@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from typing import Any, List
+from typing import Any, List, Optional
 
 from deciphon_sched.cffi import ffi, lib
 from deciphon_sched.error import SchedError
@@ -74,10 +74,13 @@ def sched_seq_get_all() -> List[sched_seq]:
     return seqs
 
 
-def sched_seq_scan_next(seq: sched_seq):
+def sched_seq_scan_next(seq: sched_seq) -> Optional[sched_seq]:
     rc = RC(lib.sched_seq_scan_next(seq.ptr))
+    if rc == RC.SCHED_SEQ_NOT_FOUND:
+        return None
     rc.raise_for_status()
     seq.refresh()
+    return seq
 
 
 @ffi.def_extern()
