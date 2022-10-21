@@ -1,7 +1,5 @@
-import importlib.metadata
-
 __name__ = "deciphon-sched"
-__version__ = importlib.metadata.version(__name__)
+__version__ = "0.1.0"
 
 __all__ = [
     "__name__",

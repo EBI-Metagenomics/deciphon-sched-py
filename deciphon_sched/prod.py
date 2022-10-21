@@ -3,7 +3,7 @@ from dataclasses import dataclass
 from typing import Any, List
 
 from deciphon_sched.cffi import ffi, lib
-from deciphon_sched.error import SchedError, SchedWrapperError
+from deciphon_sched.error import SchedError
 from deciphon_sched.rc import RC
 
 __all__ = [
@@ -83,17 +83,8 @@ def sched_prod_get_all() -> List[sched_prod]:
     return prods
 
 
-def sched_prod_add_file(file):
-    fd = os.dup(file.fileno())
-    if fd == -1:
-        raise SchedWrapperError(RC.SCHED_FAIL_OPEN_FILE)
-
-    fp = lib.fdopen(fd, b"r+")
-    if fp == ffi.NULL:
-        raise SchedWrapperError(RC.SCHED_FAIL_OPEN_FILE)
-
-    rc = RC(lib.sched_prod_add_file(fp))
-    lib.fclose(fp)
+def sched_prod_add_file(filename: str):
+    rc = RC(lib.sched_prod_add_file(filename.encode()))
     rc.raise_for_status()
 
 

@@ -8,7 +8,7 @@ from pathlib import Path
 PWD = Path(os.path.dirname(os.path.abspath(__file__)))
 USER = "EBI-Metagenomics"
 PROJECT = "deciphon-sched"
-VERSION = "0.4.7"
+VERSION = "0.5.0"
 CMAKE_OPTS = [
     "-DCMAKE_BUILD_TYPE=Release",
     "-DENABLE_ALL_WARNINGS=ON",
